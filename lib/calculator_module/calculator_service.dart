@@ -1,0 +1,31 @@
+import 'package:math_expressions/math_expressions.dart';
+
+// class CalculatorService {
+//   String evaluateExpression(String exp) {
+//     try {
+//       Parser p = Parser();
+//       Expression expression = p.parse(exp);
+//       ContextModel cm = ContextModel();
+//       double eval = expression.evaluate(EvaluationType.REAL, cm);
+//       return eval.toString();
+//     } catch (e) {
+//       return "Error";
+//     }
+//   }
+// }
+
+class CalculatorService {
+  String evaluateExpression(String expression) {
+    try {
+      Parser parser = Parser();
+      Expression exp = parser.parse(expression);
+
+      ContextModel cm = ContextModel();
+      double eval = exp.evaluate(EvaluationType.REAL, cm);
+
+      return eval.toString();
+    } catch (e) {
+      return "Error";
+    }
+  }
+}
